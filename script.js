@@ -47,6 +47,7 @@ canvas.height = window.innerHeight;
 const mainBall = new MainBall(canvas.width / 2, canvas.height / 2, 100, "rgb(255, 255, 255)");
 const ball1 = new Ball(mainBall, 25, "rgb(255, 0, 0)", 200, 1);
 const ball2 = new Ball(ball1, 10, "rgb(0, 255, 0)", 55, 2);
+const ball3 = new Ball(mainBall, 50, "rgb(255, 255, 0)", 350, 2);
 
 function animate() {
     angle -= 0.01;
@@ -59,12 +60,14 @@ function animate() {
 
     ball1.update(angle);
     ball2.update(angle);
+    ball3.update(angle);
 
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     mainBall.draw(context);
     ball1.draw(context);
     ball2.draw(context);
+    ball3.draw(context);
 
     requestAnimationFrame(animate);
 }
